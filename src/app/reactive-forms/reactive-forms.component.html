@@ -1,0 +1,57 @@
+<h3>Reactive Form</h3>
+<form action="" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="firstName">First Name: </label>
+    </div>
+    <div>
+        <input type="text" id="firstName" formControlName="firstName">
+        @if(profileForm.get('firstName')?.invalid){
+        <span class="text-danger"> *First Name is Required</span>
+        }
+    </div>
+
+    <div>
+        <label for="lastName">Last Name: </label>
+    </div>
+    <div>
+        <input type="text" id="lastName" formControlName="lastName">
+    </div>
+
+    <div formGroupName="address">
+        <div>
+            <label for="street">Street: </label>
+        </div>
+        <div>
+            <input type="text" id="street" formControlName="street">
+
+        </div>
+
+        <div>
+            <label for="city">City: </label>
+        </div>
+        <div>
+            <input type="text" id="city" formControlName="city">
+        </div>
+
+        <div>
+            <label for="state">State: </label>
+        </div>
+        <div>
+            <input type="text" id="state" formControlName="state">
+        </div>
+
+        <div>
+            <label for="zip">Zip: </label>
+        </div>
+        <div>
+            <input type="text" id="zip" formControlName="zip">
+        </div>
+    </div>
+
+    <br>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+<p>{{profileForm.value | json}}</p>
