@@ -1,7 +1,26 @@
-<h3>Favorite Color: (Template Form)</h3>
+<div class="container">
+    <h2>Actor Form</h2>
+    <p>{{model | json}}</p>
+    <form action="" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="model.name">
+        </div>
 
-<div>
-    <input type="text" [(ngModel)]="favoriteColor">
+        <div class="form-group">
+            <label for="studio">Studio</label>
+            <input type="text" class="form-control" id="studio" name="studio" [(ngModel)]="model.studio">
+        </div>
+
+        <div class="form-group">
+            <label for="skill">Skill</label>
+            <select name="skill" id="skill" class="form-control" [(ngModel)]="model.skill">
+                @for (skill of skills; track $index) {
+                <option [value]="skill">{{skill}}</option>
+                }
+            </select>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
 </div>
-
-<p>Favorite Color: {{favoriteColor}}</p>

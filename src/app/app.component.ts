@@ -4,7 +4,7 @@ import { TemplateFormComponent } from './template-form/template-form.component';
 
 @Component({
   selector: 'app-root',
-  imports: [ReactiveFormsComponent],
+  imports: [TemplateFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
