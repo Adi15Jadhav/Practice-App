@@ -1,12 +1,6 @@
 import { JsonPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -15,16 +9,14 @@ import {
   styleUrl: './reactive-forms.component.css',
 })
 export class ReactiveFormsComponent {
-  private formBuilder = inject(FormBuilder);
-
-  profileForm = this.formBuilder.group({
-    firstName: ['', Validators.required],
-    lastName: [''],
-    address: this.formBuilder.group({
-      street: [''],
-      city: [''],
-      state: [''],
-      zip: [''],
+  profileForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    address: new FormGroup({
+      street: new FormControl(''),
+      city: new FormControl(''),
+      state: new FormControl(''),
+      zip: new FormControl(''),
     }),
   });
 
