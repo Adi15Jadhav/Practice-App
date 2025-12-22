@@ -48,6 +48,18 @@
         </div>
     </div>
 
+    <div formArrayName="aliases">
+        <h2>Aliases</h2>
+        <button (click)="addAliases()" type="button">+ Add Alias</button>
+
+        @for (alias of aliases.controls; track $index; let index= $index) {
+        <div>
+            <label for="">alias- {{index}}</label>
+        </div>
+        <div><input type="text" id='alias-{{ index }}' formControlName="{{index}}"></div>
+        }
+    </div>
+
     <br>
     <div>
         <button type="submit">Submit</button>
