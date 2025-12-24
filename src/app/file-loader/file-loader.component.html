@@ -1,0 +1,11 @@
+<div>
+    <h1>File Upload Event</h1>
+    <form action="" [formGroup]="formGroup">
+        <div>
+            <label for="file">Upload File</label>
+            <input type="file" id="file" formControlName="file" (change)="onFileSelected($event)">
+        </div>
+
+        <button>Submit</button>
+    </form>
+</div>
