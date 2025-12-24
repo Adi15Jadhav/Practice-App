@@ -1,0 +1,11 @@
+<div>
+    <h1>Error Handler Example</h1>
+    <button (click)="fetchData()">Fetch Data</button>
+
+    @if(data){
+    <div>
+        <h2>Data:</h2>
+        <pre>{{ data | json }}</pre>
+    </div>
+    }
+</div>
